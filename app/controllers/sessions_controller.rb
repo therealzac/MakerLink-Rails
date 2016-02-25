@@ -15,17 +15,17 @@ class SessionsController < ApplicationController
 
     if @user
       sign_in(@user)
-      redirect_to user_url(@user)
+      render :show
     else
-      flash.now[:errors] = ["Invalid email or password"]
-      render :new
+      flash[:errors] = ["Invalid email or password"]
+      redirect_to new_sessions_url
     end
   end
 
   def show
     @user = current_user
     if @user
-      redirect_to user_url(@user)
+      render :show
     else
       render :new
     end
@@ -33,6 +33,6 @@ class SessionsController < ApplicationController
 
   def destroy
     sign_out
-    redirect_to new_session_url
+    redirect_to root_url
   end
 end

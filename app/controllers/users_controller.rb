@@ -7,7 +7,7 @@ class UsersController < ApplicationController
     @user = User.new(user_params)
     if @user.save
       sign_in(@user)
-      redirect_to 'sessions#show'
+      redirect_to sessions_url
     else
       flash[:errors] = @user.errors.full_messages
       redirect_to new_user_url

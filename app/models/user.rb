@@ -9,6 +9,7 @@ class User < ActiveRecord::Base
   def self.find_by_credentials(email, password)
     user = User.find_by(email: email)
     return nil unless user && user.valid_password?(password)
+    user
   end
 
   def password=(password)
@@ -17,7 +18,7 @@ class User < ActiveRecord::Base
   end
 
   def valid_password?(password)
-    BCrpyt::Password.new(self.password_digest).is_password?(password)
+    BCrypt::Password.new(self.password_digest).is_password?(password)
   end
 
   def reset_token!

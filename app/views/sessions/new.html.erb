@@ -5,8 +5,8 @@
             <h1 class="logo-name">mL</h1>
 
         </div>
-        <h3>makerLink</h3>
-        <p>Welcome back.</p>
+        <h3>Welcome back.</h3>
+        <p><%= flash[:errors].join("<br>").html_safe if flash[:errors] %></p>
         <form class="m-t" role="form" action="<%= sessions_url %>" method="POST">
             <%= auth_token_input %>
             <div class="form-group">
