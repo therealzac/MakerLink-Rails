@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-  def new
+  def landing
     render :layout => "empty"
   end
 
