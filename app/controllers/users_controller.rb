@@ -1,4 +1,8 @@
 class UsersController < ApplicationController
+  def new
+    render :layout => "empty"
+  end
+
   def create
     @user = User.new(user_params)
     if @user.save
