@@ -1,5 +1,6 @@
 class UsersController < ApplicationController
   def new
+    render :layout => "empty"
   end
 
   def create
