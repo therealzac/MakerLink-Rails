@@ -15,6 +15,7 @@ class SessionsController < ApplicationController
 
     if @user
       sign_in(@user)
+      @extra_class = "sidebar-content"
       render :show
     else
       flash[:errors] = ["Invalid email or password"]
@@ -25,6 +26,7 @@ class SessionsController < ApplicationController
   def show
     @user = current_user
     if @user
+      @extra_class = "sidebar-content"
       render :show
     else
       render :new
