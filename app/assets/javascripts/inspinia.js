@@ -1,6 +1,6 @@
 /*
  *
- *   INSPINIA - Responsive Admin Theme
+ *   MAKERLINK  - Make it happen.
  *   version 2.4
  *
  */
